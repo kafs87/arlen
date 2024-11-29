@@ -82,11 +82,14 @@ function App() {
         type="text"
         placeholder="Digite o nome do jogo..."
         value={gameName}
+        onFocus={(e) => e.target.placeholder = ""}
+        onBlur={(e) => e.target.placeholder = gameName ? "" : "Digite o nome do jogo..."}
         onChange={(e) => setGameName(e.target.value)}
         style={{
           '--placeholder-color': placeholderColor, // Passa a cor para o CSS via variável
         }}
       />
+
 
       <div className="game-container">
         <div className="menu-box">
